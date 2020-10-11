@@ -16,7 +16,7 @@ jobs:
         with:
           command: validate
           arguments: -syntax-only
-          target: artifacts.pkr.json packer.json
+          target: ami.json
 
       - name: Packer AMI Build
         uses: zmingxie/packer-ami-builder@master
