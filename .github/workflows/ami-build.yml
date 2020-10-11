@@ -11,12 +11,12 @@ jobs:
       - uses: actions/checkout@v2
 
         # validate templates
-      - name: Validate Template
-        uses: operatehappy/packer-github-actions@master
-        with:
-          command: validate
-          arguments: -syntax-only
-          target: ami.json
+#      - name: Validate Template
+#        uses: operatehappy/packer-github-actions@master
+#        with:
+#          command: validate
+#          arguments: -syntax-only
+#          target: ../../ami.json
 
       - name: Packer AMI Build
         uses: zmingxie/packer-ami-builder@master
