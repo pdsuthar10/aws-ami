@@ -1,0 +1,30 @@
+name: Build an AMI using Packer
+
+on:
+  push:
+    branches:
+      - 'master'
+jobs:
+  packer-ami-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+        # validate templates
+      - name: Validate Template
+        uses: operatehappy/packer-github-actions@master
+        with:
+          command: validate
+          arguments: -syntax-only
+          target: artifacts.pkr.json packer.json
+
+      - name: Packer AMI Build
+        uses: zmingxie/packer-ami-builder@master
+        with:
+          packerArgs: 'build ami.json'
+          workDir: '.'
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: us-east-1
+          SUBNET_ID: ${{ secrets.SUBNET_ID }}
