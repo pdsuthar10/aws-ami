@@ -9,6 +9,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Decrypt large secret
+        env:
+          AWS_AMI_USERS: ${{ secrets.AWS_AMI_USERS }}
+        run: |
+          echo "$AWS_AMI_USERS"
 
       - name: Packer AMI Build
         uses: zmingxie/packer-ami-builder@master
@@ -20,4 +25,4 @@ jobs:
           AWS_SECRET_KEY: ${{ secrets.AWS_SECRET_KEY }}
           AWS_REGION: ${{ secrets.AWS_REGION }}
           SUBNET_ID: ${{ secrets.SUBNET_ID }}
-          AMI_USERS: ${{ secrets.AMI_USERS }}
+          AWS_AMI_USERS: ${{ secrets.AWS_AMI_USERS }}
