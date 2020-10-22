@@ -32,4 +32,4 @@ Packer is a tool for building identical machine images for multiple platforms fr
     $ packer build ami.json
     ```
 
-    Packer will build an AMI according to the `ami.json` template. The AMI will be available in your AWS account.
+    Packer will build an AMI according to the `ami.json` template. The AMI will be available in your AWS account
