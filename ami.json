@@ -4,8 +4,8 @@
     "aws_secret_key": "",
     "aws_region": "",
     "subnet_id": "",
-    "aws_ami_users": "",
-    "source_ami": "",
+    "aws_ami_users": "{{env `AWS_AMI_USERS`}}",
+    "source_ami": "{{env `AWS_SOURCE_AMI`}}",
     "ssh_username": "ubuntu"
   },
   "builders": [

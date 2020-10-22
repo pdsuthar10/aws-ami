@@ -20,4 +20,4 @@ jobs:
           AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}
           SUBNET_ID: ${{ secrets.SUBNET_ID }}
           AWS_AMI_USERS: ${{ secrets.AWS_AMI_USERS }}
-          SOURCE_AMI: ${{ secrets.SOURCE_AMI }}
+          AWS_SOURCE_AMI: ${{ secrets.SOURCE_AMI }}
