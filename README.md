@@ -1,5 +1,4 @@
 # AMI Packer
-
 Packer is a tool for building identical machine images for multiple platforms from a single source configuration.
 
 # Installing Packer
@@ -22,7 +21,7 @@ Packer is a tool for building identical machine images for multiple platforms fr
     ```
 
 3. `ami.json` file tells Packer what platforms to build images for and how you want to build them. In our
-    case, we'll create a simple AMI using `Ubuntu 18 LTS (AMI ID ami-0817d428a6fb68645)` as your source image that has Node pre-installed.
+    case, we'll create a simple AMI usin `Ubuntu 18 LTS (AMI ID ami-0817d428a6fb68645)` as your source image that has Node pre-installed.
 
 4. Export your AWS credentials as the `AWS_ACCESS_KEY`,`AWS_SECRET_KEY`, `AWS_REGION` and `SUBNET_ID` as environment variables.
 
